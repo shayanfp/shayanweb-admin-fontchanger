@@ -1,4 +1,8 @@
 <?php
+if (!defined('ABSPATH')){
+	exit; // Exit if accessed directly.
+}
+//
 // ShayanWeb.com FontChanger
 function shayanweb_font_changer() {
 	wp_enqueue_style( 'custom_admin_panel_style', plugin_dir_url( __FILE__ )  . 'shwebfontchanger.css' );
