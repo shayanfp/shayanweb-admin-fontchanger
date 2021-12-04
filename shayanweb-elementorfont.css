@@ -1,0 +1,39 @@
+/*
+By: https://ShayanWeb.com/ - Shayan Farhang Pazhooh
+*/
+@font-face {
+  font-family: 'ShayanWeb-Shabnam';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/Shabnam/Shabnam-FD.eot');
+  src: url('fonts/Shabnam/Shabnam-FD.eot?#iefix') format('embedded-opentype'),
+    url('fonts/Shabnam/Shabnam-FD.woff2') format('woff2'),
+    url('fonts/Shabnam/Shabnam-FD.woff') format('woff'),
+    url('fonts/Shabnam/Shabnam-FD.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'ShayanWeb-Shabnam';
+  font-style: normal;
+  font-weight: bold;
+  src: url('fonts/Shabnam-Bold/Shabnam-Bold-FD.eot');
+  src: url('fonts/Shabnam-Bold/Shabnam-Bold-FD.eot?#iefix') format('embedded-opentype'),
+    url('fonts/Shabnam-Bold/Shabnam-Bold-FD.woff2') format('woff2'),
+    url('fonts/Shabnam-Bold/Shabnam-Bold-FD.woff') format('woff'),
+    url('fonts/Shabnam-Bold/Shabnam-Bold-FD.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'ShayanWeb-Shabnam';
+  font-style: normal;
+  font-weight: lighter;
+  src: url('fonts/Shabnam-Light/Shabnam-Light-FD.eot');
+  src: url('fonts/Shabnam-Light/Shabnam-Light-FD.eot?#iefix') format('embedded-opentype'),
+    url('fonts/Shabnam-Light/Shabnam-Light-FD.woff2') format('woff2'),
+    url('fonts/Shabnam-Light/Shabnam-Light-FD.woff') format('woff'),
+    url('fonts/Shabnam-Light/Shabnam-Light-FD.ttf') format('truetype');
+}
+
+.elementor-panel,body,.elementor-safe-mode-toast,.elementor-button,
+.elementor-panel .elementor-panel-scheme-buttons .elementor-button,
+.e-global__confirm-input-wrapper input, input,
+#elementor-panel-elements-search-input{font-family:ShayanWeb-Shabnam!important}
+.elementor-loading-title{font-size:16px!important;letter-spacing:unset!important;}
