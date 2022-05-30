@@ -1,2 +1,2 @@
 <?php
-// Silence is Golden - ShayanWeb.com
+// Silence is Golden (: - ShayanWeb.com
