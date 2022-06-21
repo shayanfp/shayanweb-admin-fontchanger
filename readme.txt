@@ -3,7 +3,7 @@ Contributors: shayanfp
 Tags: fonts, admin, wp-admin
 Requires at least: 5.2
 Tested up to: 6.0
-Stable tag: 1.3
+Stable tag: 1.4
 Requires PHP: 5.6
 Donate link: https://ShayanWeb.com/
 License: GPLv2 or later
@@ -40,13 +40,17 @@ Yes!! In the latest version of ShayanWeb Admin FontChanger, you can design your 
 
 = Is there any options to disable Elementor or WordPress font changer? =
 
-Yes! We added options for this. Go to {yourwebsiteaddress}/wp-admin/options.php and change 'shayanweb_plugin_disable_wp_font_changer' or 'shayanweb_plugin_disable_elementor_font_changer' to "yes" to disable the fontchanger.
+Yes! We added options for this. Go to {yourwebsiteaddress}/wp-admin/options.php and change 'shayanweb_plugin_disable_wp_font_changer' , 'shayanweb_plugin_disable_elementor_font_changer' , or 'shayanweb_plugin_disable_classic_font_changer' to "yes" to disable the fontchanger.
 
 == Screenshots ==
 
 1. How does wordpress looks like after installing this plugin
 
 == Changelog ==
+
+= 1.4 =
+* Adding styles to change WordPress classic editor font
+* Adding some needed directories for better structure
 
 = 1.3 =
 * We updated CSS files for better compatibility with WordPress 6.0 and the latest version of Elementor.

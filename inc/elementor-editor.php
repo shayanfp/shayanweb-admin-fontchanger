@@ -7,7 +7,7 @@ function shayanweb_elementoreditor_font_changer() {
 	if (defined('ELEMENTOR_VERSION')) {
     //
     wp_enqueue_style( 'shayanweb_custom_elementoreditor_style',
-  	plugin_dir_url( __FILE__ ) . 'shayanweb-elementorfont.css',
+  	SHAYANWEB_FONT_CHANGER_URL . 'css/shayanweb-elementorfont.css',
   	array(),
   	SHAYANWEB_FONT_CHANGER_VERSION);
     //

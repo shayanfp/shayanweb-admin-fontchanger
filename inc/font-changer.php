@@ -6,7 +6,7 @@ if (!defined('ABSPATH')){
 // ShayanWeb.com Admin FontChanger
 function shayanweb_font_changer() {
 	wp_enqueue_style( 'shayanweb_custom_admin_panel_style',
-	plugin_dir_url( __FILE__ ) . 'shwebfontchanger.css',
+	SHAYANWEB_FONT_CHANGER_URL . 'css/shwebfontchanger.css',
 	array(),
 	SHAYANWEB_FONT_CHANGER_VERSION);
 }
