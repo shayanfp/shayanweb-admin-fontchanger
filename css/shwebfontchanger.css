@@ -4,42 +4,12 @@ By: https://ShayanWeb.com/ - Shayan Farhang Pazhooh
 html {
   scroll-behavior: smooth;
 }
-@font-face {
-  font-family: 'ShayanWeb-Shabnam';
-  font-style: normal;
-  font-weight: normal;
-  src: url('../fonts/Shabnam/Shabnam-FD.eot');
-  src: url('../fonts/Shabnam/Shabnam-FD.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Shabnam/Shabnam-FD.woff2') format('woff2'),
-    url('../fonts/Shabnam/Shabnam-FD.woff') format('woff'),
-    url('../fonts/Shabnam/Shabnam-FD.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'ShayanWeb-Shabnam';
-  font-style: normal;
-  font-weight: bold;
-  src: url('../fonts/Shabnam-Bold/Shabnam-Bold-FD.eot');
-  src: url('../fonts/Shabnam-Bold/Shabnam-Bold-FD.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Shabnam-Bold/Shabnam-Bold-FD.woff2') format('woff2'),
-    url('../fonts/Shabnam-Bold/Shabnam-Bold-FD.woff') format('woff'),
-    url('../fonts/Shabnam-Bold/Shabnam-Bold-FD.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'ShayanWeb-Shabnam';
-  font-style: normal;
-  font-weight: lighter;
-  src: url('../fonts/Shabnam-Light/Shabnam-Light-FD.eot');
-  src: url('../fonts/Shabnam-Light/Shabnam-Light-FD.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Shabnam-Light/Shabnam-Light-FD.woff2') format('woff2'),
-    url('../fonts/Shabnam-Light/Shabnam-Light-FD.woff') format('woff'),
-    url('../fonts/Shabnam-Light/Shabnam-Light-FD.ttf') format('truetype');
-}
 ul#adminmenu, .contextual-help-sidebar, .help-tab-content, .active, .add-buttons-title, .updated_base, .selection-error-label, .selection-error-filename, .selection-error-message, .details, .instructions, code, p, a, h1, h2, h3, h4, h5, h6, input, label, button, select, .description, textarea, form, th, .username, .display-name, #published-posts, span.editor-block-inspector__no-blocks.block-editor-block-inspector__no-blocks, .table-of-contents__counts, input, td, .manage-menus, .widget-description, ul, li, .rtl #wpadminbar *,.editor-styles-wrapper > *, .editor-styles-wrapper p, .editor-styles-wrapper ol, .editor-styles-wrapper ul, .editor-styles-wrapper dl, .editor-styles-wrapper dt, .editor-post-title__block .editor-post-title__input, .editor-styles-wrapper .wp-block h1, .editor-styles-wrapper .wp-block h2, .editor-styles-wrapper .wp-block h3, .editor-styles-wrapper .wp-block h4, .editor-styles-wrapper .wp-block h5, .editor-styles-wrapper .wp-block h6, .editor-styles-wrapper .has-drop-cap:not(:focus)::first-letter, .editor-styles-wrapper cite, .editor-styles-wrapper figcaption, .editor-styles-wrapper .wp-caption-text,.editor-post-title__block .editor-post-title__input, .editor-styles-wrapper .wp-block h1, .editor-styles-wrapper .wp-block h2, .editor-styles-wrapper .wp-block h3, .editor-styles-wrapper .wp-block h4, .editor-styles-wrapper .wp-block h5, .editor-styles-wrapper .wp-block h6, .editor-styles-wrapper .has-drop-cap:not(:focus)::first-letter, .editor-styles-wrapper cite, .editor-styles-wrapper figcaption, .editor-styles-wrapper .wp-caption-text, .components-form-token-field__input-container, body.rtl, body.rtl .press-this a.wp-switch-editor, .wp-block-nextpage>span,
 .components-placeholder__error, .components-placeholder__fieldset, .components-placeholder__instructions, .components-placeholder__label,#wpadminbar>#wp-toolbar>#wp-admin-bar-top-secondary>#wp-admin-bar-search #adminbarsearch input.adminbar-input,.media-frame,.media-modal,
 .media-frame input[type=color],.media-frame input[type=date],.media-frame input[type=datetime-local],.media-frame input[type=datetime],.media-frame input[type=email],.media-frame input[type=month],.media-frame input[type=number],.media-frame input[type=password],.media-frame input[type=search],.media-frame input[type=tel],.media-frame input[type=text],.media-frame input[type=time],.media-frame input[type=url],.media-frame input[type=week],.media-frame select,.media-frame textarea,
 .media-frame .search,.rtl .media-frame,.rtl .media-frame .search,.rtl .media-frame input[type=email],.rtl .media-frame input[type=number],.rtl .media-frame input[type=password],.rtl .media-frame input[type=search],.rtl .media-frame input[type=tel],.rtl .media-frame input[type=text],.rtl .media-frame input[type=url],.rtl .media-frame select,.rtl .media-frame textarea,.rtl .media-modal,
 .mce-container .mce-monospace,.mce-widget .mce-monospace,.mce-window .wp-editor-help kbd,.shayanweb-admin-notice , .shayanweb-admin-notice div, .shayanweb-admin-notice p, .shayanweb-admin-notice a{
-  font-family:ShayanWeb-Shabnam!important}
+  font-family:ShayanWeb-Font!important}
 *{outline:none!important}
 .dashicons, .dashicons-before:before, #wpadminbar .ab-icon, #wpadminbar .ab-item:before, #wpadminbar>#wp-toolbar>#wp-admin-bar-root-default .ab-icon, .wp-admin-bar-arrow {
   font-family:dashicons!important}

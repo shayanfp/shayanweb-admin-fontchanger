@@ -2,24 +2,26 @@
 Contributors: shayanfp
 Tags: fonts, admin, wp-admin
 Requires at least: 5.2
-Tested up to: 6.0
-Stable tag: 1.4
+Tested up to: 6.0.1
+Stable tag: 1.5
 Requires PHP: 5.6
 Donate link: https://ShayanWeb.com/
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Easiest way to change WordPress admin font for farsi websites is using this plugin!
+Easiest way to change WordPress admin font for Farsi websites is using this plugin!
 
 == Description ==
 
-With this plugin, you can change you WordPress admin font to Shabnam font which is a good font for Persian (Farsi) language.
+With this plugin, you can change you WordPress admin font to Shabnam or Vazir font which are some good fonts for Persian (Farsi) language.
 
-You have to just install this plugin on your website and that's it! You can experience WordPress with new font!
+You have to just install this plugin on your website and that's it! You can experience WordPress admin with new great font!
 
-And you can also change Elementor Editor font to have a greart experience in designing your website!!
+And you can also change Elementor Editor font to have a great experience in designing your website!!
 
-Know more about changing WordPress admin font:
+This plugin also provides a lightweight options panel and you can use it to choose between Shabnam and Vazir font and do some other settings for the plugin.
+
+Know more about changing WordPress admin font in ShayanWeb.com website:
 [تغییر فونت پیشخوان وردپرس](https://shayanweb.com/blog/change-wp-admin-font/)
 
 Checkout ShayanWeb articles about WordPress and having a great website! : [https://ShayanWeb.com/](https://ShayanWeb.com/)
@@ -28,25 +30,31 @@ Checkout ShayanWeb articles about WordPress and having a great website! : [https
 
 = Where are the options of this plugin? =
 
-There are no options for this plguin! After that you installed this plugin, your wp-admin font will change!
+After that you installed this plugin, your wp-admin font will change! We also added a options panel to this plugin to choose between fonts, disable some features and more...
+You can find this options panel at "Settings > ShayanWeb FontChanger".
 
 = How does this plugin work? =
 
 You can check out this article about the plugin: [https://shayanweb.com/blog/change-wp-admin-font/](https://shayanweb.com/blog/change-wp-admin-font/)
 
-= Does this plugin also change Elementor Editor font? =
+= Does this plugin also change the Elementor Editor font? =
 
 Yes!! In the latest version of ShayanWeb Admin FontChanger, you can design your website with Elementor and feel really comfortable!
 
 = Is there any options to disable Elementor or WordPress font changer? =
 
-Yes! We added options for this. Go to {yourwebsiteaddress}/wp-admin/options.php and change 'shayanweb_plugin_disable_wp_font_changer' , 'shayanweb_plugin_disable_elementor_font_changer' , or 'shayanweb_plugin_disable_classic_font_changer' to "yes" to disable the fontchanger.
+Yes! We have added options for this. Go to "Settings" and find "ShayanWeb FontChanger". From there, you can disable Elementor, WordPress or classic editor font changer and you can also choose another font for your website admin!!
 
 == Screenshots ==
 
 1. How does wordpress looks like after installing this plugin
 
 == Changelog ==
+
+= 1.5 =
+* A big update! Adding options panel for this plugin!! This options panel is really lightweight and it is so useful for you! Check it out from "Settings > ShayanWeb FontChanger".
+* Adding [VazirMatn font](https://rastikerdar.github.io/vazirmatn/fa) to the plugin too and you can set it for you WordPress admin!
+* Adding some missed tags to css files to change their fonts too
 
 = 1.4 =
 * Adding styles to change WordPress classic editor font

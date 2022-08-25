@@ -1,36 +1,6 @@
 /*
 By: https://ShayanWeb.com/ - Shayan Farhang Pazhooh
 */
-@font-face {
-  font-family: 'ShayanWeb-Shabnam';
-  font-style: normal;
-  font-weight: normal;
-  src: url('../fonts/Shabnam/Shabnam-FD.eot');
-  src: url('../fonts/Shabnam/Shabnam-FD.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Shabnam/Shabnam-FD.woff2') format('woff2'),
-    url('../fonts/Shabnam/Shabnam-FD.woff') format('woff'),
-    url('../fonts/Shabnam/Shabnam-FD.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'ShayanWeb-Shabnam';
-  font-style: normal;
-  font-weight: bold;
-  src: url('../fonts/Shabnam-Bold/Shabnam-Bold-FD.eot');
-  src: url('../fonts/Shabnam-Bold/Shabnam-Bold-FD.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Shabnam-Bold/Shabnam-Bold-FD.woff2') format('woff2'),
-    url('../fonts/Shabnam-Bold/Shabnam-Bold-FD.woff') format('woff'),
-    url('../fonts/Shabnam-Bold/Shabnam-Bold-FD.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'ShayanWeb-Shabnam';
-  font-style: normal;
-  font-weight: lighter;
-  src: url('../fonts/Shabnam-Light/Shabnam-Light-FD.eot');
-  src: url('../fonts/Shabnam-Light/Shabnam-Light-FD.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Shabnam-Light/Shabnam-Light-FD.woff2') format('woff2'),
-    url('../fonts/Shabnam-Light/Shabnam-Light-FD.woff') format('woff'),
-    url('../fonts/Shabnam-Light/Shabnam-Light-FD.ttf') format('truetype');
-}
-body#tinymce.wp-editor.content p, body#tinymce.wp-editor.content ol, body#tinymce.wp-editor.content ul, body#tinymce.wp-editor.content dl, body#tinymce.wp-editor.content dt{
-font-family: ShayanWeb-Shabnam;letter-spacing:normal}
+body,body.rtl,body.locale-he-il,td,.wpview-error p,th,body.locale-vi,pre,body#tinymce.wp-editor.content p, body#tinymce.wp-editor.content ol, body#tinymce.wp-editor.content ul, body#tinymce.wp-editor.content dl, body#tinymce.wp-editor.content dt{
+font-family: ShayanWeb-Font;letter-spacing:normal}
 body#tinymce.wp-editor.content{font-size:16px}
