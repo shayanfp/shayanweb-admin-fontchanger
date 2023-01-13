@@ -14,4 +14,4 @@ function shayanweb_font_changer() {
 	array(),
 	SHAYANWEB_FONT_CHANGER_VERSION);
 }
-add_action( 'admin_enqueue_scripts', 'shayanweb_font_changer' );
+add_action( 'admin_enqueue_scripts', 'shayanweb_font_changer',99999999 );

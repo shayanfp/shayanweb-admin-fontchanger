@@ -1,6 +1,6 @@
 <?php
 if (!defined('ABSPATH')){
-	exit; // Exit if accessed directly.
+  exit; // Exit if accessed directly.
 }
 //
 function shayanweb_fontchanger_get_all_options(){

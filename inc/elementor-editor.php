@@ -18,4 +18,4 @@ function shayanweb_elementoreditor_font_changer() {
     wp_add_inline_style('shayanweb_custom_elementoreditor_style', '.elementor-panel{font-family:ShayanWeb-Shabnam!important}');
   }
 }
-add_action( 'elementor/editor/before_enqueue_scripts', 'shayanweb_elementoreditor_font_changer',100);
+add_action( 'elementor/editor/before_enqueue_scripts', 'shayanweb_elementoreditor_font_changer',99999999 );
