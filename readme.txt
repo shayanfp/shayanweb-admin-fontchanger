@@ -3,7 +3,7 @@ Contributors: shayanfp
 Tags: fonts, admin, wp-admin
 Requires at least: 5.2
 Tested up to: 6.1.1
-Stable tag: 1.5.1
+Stable tag: 1.5.2
 Requires PHP: 5.6
 Donate link: https://ShayanWeb.com/
 License: GPLv2 or later
@@ -50,6 +50,10 @@ Yes! We have added options for this. Go to "Settings" and find "ShayanWeb FontCh
 1. How does wordpress looks like after installing this plugin
 
 == Changelog ==
+
+= 1.5.2 - 2023-01-13 =
+* Elementor font problem solved
+* CSS files versioning solved
 
 = 1.5.1 - 2023-01-13 =
 * Compatibility with the latest version of WordPress
