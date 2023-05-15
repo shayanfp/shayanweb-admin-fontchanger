@@ -2,8 +2,8 @@
 Contributors: shayanfp
 Tags: fonts, admin, wp-admin
 Requires at least: 5.2
-Tested up to: 6.1.1
-Stable tag: 1.5.2
+Tested up to: 6.2
+Stable tag: 1.6
 Requires PHP: 5.6
 Donate link: https://ShayanWeb.com/
 License: GPLv2 or later
@@ -50,6 +50,14 @@ Yes! We have added options for this. Go to "Settings" and find "ShayanWeb FontCh
 1. How does wordpress looks like after installing this plugin
 
 == Changelog ==
+
+= 1.6 - 2023-05-15 =
+* Change wp-login.php font (+setting to turn it on/off)
+* Change wpadminbar font for only admin (+setting to turn it on/off)
+* You can change the whole WordPress theme font with only one click! (Front Font Changer)
+* Compatible with WordPress 6.2
+* Fixed stars changing font problem (css)
+* Elementor editor font for the templates modal
 
 = 1.5.2 - 2023-01-13 =
 * Elementor font problem solved

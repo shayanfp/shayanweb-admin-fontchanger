@@ -19,3 +19,4 @@ body, a, p, div, input, span, h1, h2, h3, h4, h5, h6, textarea, ul, li, button, 
   display:none!important}
 #adminmenu #menu-posts-elementor_library .wp-menu-image:before, #adminmenu #toplevel_page_elementor div.wp-menu-image:before {
   font-family:eicons!important}
+.star-rating .star,.dashicons-before:before,[role=treeitem] span[aria-hidden]{font-family:dashicons!important}
