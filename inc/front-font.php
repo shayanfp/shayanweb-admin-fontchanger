@@ -9,7 +9,7 @@ function shayanweb_front_font_changer() {
 	SHAYANWEB_FONT_CHANGER_URL . 'css/'.shayanweb_fontchanger_option('choose_font').'.css',
 	array(),
 	SHAYANWEB_FONT_CHANGER_VERSION);
-    $adding_front_font_css = "*:not(i),html,body, a, p, div, input, span, h1, h2, h3, h4, h5, h6, textarea, ul, li, button
+    $adding_front_font_css = "*:not(i),html,body, a, p, div, input, span, h1, h2, h3, h4, h5, h6, textarea, ul, li, button, .woocommerce, font
     {font-family:ShayanWeb-Font!important;letter-spacing: normal;}
     .dashicons, .dashicons-before:before, #wpadminbar .ab-icon, #wpadminbar>#wp-toolbar>#wp-admin-bar-root-default .ab-icon
     {font-family:dashicons!important;}";

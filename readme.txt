@@ -2,35 +2,35 @@
 Contributors: shayanfp
 Tags: fonts, admin, wp-admin
 Requires at least: 5.2
-Tested up to: 6.2
-Stable tag: 1.6
+Tested up to: 6.3
+Stable tag: 1.7
 Requires PHP: 5.6
 Donate link: https://ShayanWeb.com/
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Easiest way to change WordPress admin font for Farsi websites is using this plugin!
+The easiest way to change your WordPress admin font for Farsi websites is using this lightweight plugin!
 
 == Description ==
 
-With this plugin, you can change your WordPress admin font to Shabnam or Vazir font which are some great fonts for Persian (Farsi) language.
+By using this plugin, you can change your WordPress admin font to Shabnam, Vazir, or Sahel fonts which are some amazing fonts for the Persian (Farsi) language. You can also use this plugin on Arabic, Pashto, Kurdish, and Urdu websites. The mentioned fonts also support English as well, so you will not have any problems.
 
-You have to just install this plugin on your website and that's it! You can experience WordPress admin with new great font!
+You have to just install this plugin on your website and that's it! You can experience your new WordPress admin panel with a new great font!
 
-And you can also change Elementor Editor font to have a great experience in designing your website!!
+And you can also change Elementor Editor font to have a great experience while designing your website!!
 
-This plugin also provides a lightweight options panel and you can use it to choose between Shabnam and Vazir font and do some other settings for the plugin.
+This plugin also provides a lightweight options panel, so you can use it to choose between Shabnam, Vazir, or Sahel fonts and do some other settings for the plugin.
 
-Understand more about changing WordPress admin font in ShayanWeb.com website:
+Learn more about changing WordPress admin font in ShayanWeb.com website:
 [تغییر فونت پیشخوان وردپرس](https://shayanweb.com/blog/change-wp-admin-font/)
 
-Checkout ShayanWeb articles about WordPress and having a great website! : [https://ShayanWeb.com/](https://ShayanWeb.com/)
+Checkout ShayanWeb articles about WordPress to have a great website! : [https://ShayanWeb.com/](https://ShayanWeb.com/)
 
 == Frequently Asked Questions ==
 
 = Where are the options of this plugin? =
 
-After that you installed this plugin, your wp-admin font will change! We also added a options panel to this plugin to choose between fonts, disable some features and more...
+After that you installed this plugin, your wp-admin font will immidiately change! We've also added an options panel for this plugin, so you can choose between fonts, disable some features and more...
 You can find this options panel at "Settings > ShayanWeb FontChanger".
 
 = How does this plugin work? =
@@ -39,17 +39,27 @@ You can check out this article about the plugin: [https://shayanweb.com/blog/cha
 
 = Does this plugin also change the Elementor Editor font? =
 
-Yes!! In the latest version of ShayanWeb Admin FontChanger, you can design your website with Elementor and feel really comfortable!
+Yes!! In the latest versions of ShayanWeb Admin FontChanger, you can design your website using Elementor and feel really comfortable!
 
 = Is there any options to disable Elementor or WordPress font changer? =
 
 Yes! We have added options for this. Go to "Settings" and find "ShayanWeb FontChanger". From there, you can disable Elementor, WordPress or classic editor font changer and you can also choose another font for your website admin!!
+
+= How can I change my WordPress theme font as well? =
+
+Well, we highly recommand you to use your WordPress theme settings to do that. But if your current WordPress theme does not provide this feature, you can use the setting that we have put in the theme options panel.
 
 == Screenshots ==
 
 1. How does wordpress looks like after installing this plugin
 
 == Changelog ==
+
+= 1.7 - 2023-08-09 =
+* Ajax for saving the options! (Without reloading the page)
+* Compatible with WordPress 6.3
+* Adding the Sahel font, as users suggested!
+* Changing the notices
 
 = 1.6 - 2023-05-15 =
 * Change wp-login.php font (+setting to turn it on/off)
@@ -99,3 +109,4 @@ The options are available at wp-admin/options.php and you should set them to 'ye
 
 = 1.1 =
 * You can update the plugin, fast and easy from your wordpress admin dashboard!
+

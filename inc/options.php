@@ -14,6 +14,7 @@ function shayanweb_fontchanger_get_all_options(){
       'options' => array(
         'shabnam'=>__('شبنم', 'shayanweb-admin-fontchanger'),
         'vazir'=>__('وزیر', 'shayanweb-admin-fontchanger'),
+        'sahel'=>__('ساحل', 'shayanweb-admin-fontchanger'),
       ),
     ),
     'wp_font_changer' => array(
@@ -204,6 +205,12 @@ function shayanweb_fontchangeroptions_pagecontent() {
   .special-suggestion.visit-shayanweb a:hover{
     background: #00695C;
   }
+  #message-container{padding:10px;margin:20px 0;border-radius:10px;color:#333;font-size:19px;line-height:2}
+  #message-container.shwait{background-color:#ffe765;}
+  #message-container.shsuccess{background-color:#c5f1d4}
+  #message-container.sherror{background-color:#f9d4e3;}
+
+
 	.shayanweb-option{border:1px solid #e0e0e0;border-radius:10px;margin:10px 0;padding:20px;box-shadow: 0 0 20px rgba(0,0,0,0.1)}
 	.shayanweb-option label{display:block;margin-bottom:8px;font-size:15px;font-weight:bold;}
 	.shayanweb-option input[type="text"]{display:block;width:100%}
@@ -230,7 +237,7 @@ function shayanweb_fontchangeroptions_pagecontent() {
 
 
       $options = shayanweb_fontchanger_get_all_options();
-      echo '<form method="post" action="">';
+      echo '<form id="shayanweb_fontchanger_options" method="post" action="">';
 			echo '<h2>'.__( 'تنظیمات تغییر فونت شایان وب', 'shayanweb-admin-fontchanger' ).'</h2>';
 			echo '<p>'.__( 'گزینه‌های زیر را تنظیم کنید تا فونت فارسی در پیشخوان وردپرس وبسایت شما قرار گیرد. (بطور پیش‌فرض فعال است)', 'shayanweb-admin-fontchanger' ).'</p>';
       foreach ($options as $opton_name => $option) {
@@ -270,8 +277,15 @@ function shayanweb_fontchangeroptions_pagecontent() {
         echo '</div>';
       }
       echo '
-      <input type="submit" name="save_settings" value="'.__('ذخیره‌ی تنظیمات','shayanweb-admin-fontchanger').'">
+      <input type="submit" id="shayanweb-save-button" name="save_settings" value="'.__('ذخیره‌ی تنظیمات','shayanweb-admin-fontchanger').'">
+      <div id="message-container"></div>
       </form>';
+      echo "<script>
+      var shweb_success_message = '".__('ذخیره‌ی تنظیمات با موفقیت انجام شد! برای مشاهده‌ی تغییرات، صفحه را رفرش کنید.','shayanweb-admin-fontchanger')."';
+      var shweb_wait_message = '".__('در حال ذخیره‌ی تغییرات...','shayanweb-admin-fontchanger')."';
+      var shweb_error_message = '".__('خطایی در ذخیره‌ی تنظیمات وجود داشت. مجدد تلاش کنید.','shayanweb-admin-fontchanger')."';
+      var shweb_not_connected_message = '".__('خطا در اتصال به سرور... بررسی کنید وارد هستید یا خیر. صفحه را رفرش کنید و مجدد تلاش کنید.','shayanweb-admin-fontchanger')."';
+      </script>";
       ?>
 
       <div class="special-suggestion">
@@ -296,3 +310,37 @@ function shayanweb_fontchangeroptions_pagecontent() {
   </div>
   <?php
 }
+
+
+function shayanweb_fontchanger_enqueue_saving_admin_script() {
+  if (isset($_GET['page']) && $_GET['page'] === 'shayanweb-fontchanger-options') {
+      wp_enqueue_script('jquery');
+      wp_enqueue_script('shayanweb-fontchanger-ajax-save', SHAYANWEB_FONT_CHANGER_URL . 'js/shayanweb-admin-saving.js', array('jquery'), SHAYANWEB_FONT_CHANGER_VERSION, true);
+  }
+}
+add_action('admin_enqueue_scripts', 'shayanweb_fontchanger_enqueue_saving_admin_script');
+
+
+function shayanweb_fontchanger_ajax_options_save() {
+  if (!current_user_can('manage_options')) {
+      wp_send_json_error('شما دسترسی ندارید.');
+  }
+
+  if (!empty($_POST['action'])) {
+      $new_options = $_POST;
+      unset($new_options['action']);
+      
+      $real_options = shayanweb_fontchanger_get_all_options();
+      foreach ($real_options as $r_name => $r_data) {
+          if (!array_key_exists($r_name, $new_options) && $r_data['type'] == 'onoff') {
+              $new_options[$r_name] = 'off';
+          }
+      }
+      
+      shayanweb_fontchanger_update_option($new_options);
+      wp_send_json_success();
+  } else {
+      wp_send_json_error();
+  }
+}
+add_action('wp_ajax_shayanweb_fontchanger_ajax_options_save', 'shayanweb_fontchanger_ajax_options_save');
