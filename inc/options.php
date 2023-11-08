@@ -13,7 +13,7 @@ function shayanweb_fontchanger_get_all_options(){
       'default' => 'shabnam',
       'options' => array(
         'shabnam'=>__('شبنم', 'shayanweb-admin-fontchanger'),
-        'vazir'=>__('وزیر', 'shayanweb-admin-fontchanger'),
+        'vazir'=>__('وزیرمتن', 'shayanweb-admin-fontchanger'),
         'sahel'=>__('ساحل', 'shayanweb-admin-fontchanger'),
       ),
     ),
@@ -251,6 +251,11 @@ function shayanweb_fontchangeroptions_pagecontent() {
         '<label for="'.$name.'">'.$fname.'</label>'.
         '<p>'.$description.'</p>';
         if($type == 'select'){
+          if($name == 'choose_font'){
+            echo '<div class="shayanweb-font-preview">
+            <style>@media(min-width:850px){.shayanweb-font-preview{display:flex;justify-content:space-between;align-items:flex-start}}
+            #font_preview{max-width:100%}</style>';
+          }
           $option_options = $option['options'];
           echo '<select name="'.$name.'" id="'.$name.'">';
           foreach ($option_options as $o_slug => $o_name) {
@@ -261,6 +266,24 @@ function shayanweb_fontchangeroptions_pagecontent() {
             echo '<option value="'.$o_slug.'"'.$selected.'>'.$o_name.'</option>';
           }
           echo '</select>';
+          if($name == 'choose_font'){
+            echo '<img id="font_preview" src="" alt="'.__('پیش‌نمایش فونت','shayanweb-admin-fontchanger').'" />
+            <script>
+              const fontPreviews = {
+                shabnam: "'.plugins_url( 'img/shabnam.jpg', dirname(__FILE__) ).'",
+                vazir: "'.plugins_url( 'img/vazirmatn.jpg', dirname(__FILE__) ).'",
+                sahel: "'.plugins_url( 'img/sahel.jpg', dirname(__FILE__) ).'",
+              };
+              const select = document.getElementById("choose_font");
+              const fontPreview = document.getElementById("font_preview");
+              select.addEventListener("change", function () {
+                const selectedFont = select.value;
+                fontPreview.src = fontPreviews[selectedFont];
+              });
+              fontPreview.src = fontPreviews[select.value];
+            </script>
+            </div>';
+          }
         }elseif($type == 'onoff'){
           $checked='';
           if($current=='on'){

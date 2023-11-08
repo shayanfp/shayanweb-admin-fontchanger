@@ -2,8 +2,8 @@
 Contributors: shayanfp
 Tags: fonts, admin, wp-admin
 Requires at least: 5.2
-Tested up to: 6.3
-Stable tag: 1.7
+Tested up to: 6.4
+Stable tag: 1.7.1
 Requires PHP: 5.6
 Donate link: https://ShayanWeb.com/
 License: GPLv2 or later
@@ -13,7 +13,7 @@ The easiest way to change your WordPress admin font for Farsi websites is using 
 
 == Description ==
 
-By using this plugin, you can change your WordPress admin font to Shabnam, Vazir, or Sahel fonts which are some amazing fonts for the Persian (Farsi) language. You can also use this plugin on Arabic, Pashto, Kurdish, and Urdu websites. The mentioned fonts also support English as well, so you will not have any problems.
+By using this plugin, you can change your WordPress admin font to Shabnam, Vazirmatn, or Sahel fonts which are some amazing fonts for the Persian (Farsi) language. You can also use this plugin on Arabic, Pashto, Kurdish, and Urdu websites. The mentioned fonts also support English as well, so you will not have any problems.
 
 You have to just install this plugin on your website and that's it! You can experience your new WordPress admin panel with a new great font!
 
@@ -54,6 +54,10 @@ Well, we highly recommand you to use your WordPress theme settings to do that. B
 1. How does wordpress looks like after installing this plugin
 
 == Changelog ==
+
+= 1.7.1 - 2023-11-08 =
+* Added fonts preview to the admin panel settings of the plugin
+* WordPress 6.4 Compatibility
 
 = 1.7 - 2023-08-09 =
 * Ajax for saving the options! (Without reloading the page)
