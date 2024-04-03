@@ -2,8 +2,8 @@
 Contributors: shayanfp
 Tags: fonts, admin, wp-admin
 Requires at least: 5.2
-Tested up to: 6.4
-Stable tag: 1.7.1
+Tested up to: 6.5
+Stable tag: 1.7.2
 Requires PHP: 5.6
 Donate link: https://ShayanWeb.com/
 License: GPLv2 or later
@@ -51,9 +51,14 @@ Well, we highly recommand you to use your WordPress theme settings to do that. B
 
 == Screenshots ==
 
-1. How does wordpress looks like after installing this plugin
+1. How WordPress will look after installing this plugin
+2. Plugin settings interface
 
 == Changelog ==
+
+= 1.7.2 - 2024-04-03 =
+* WordPress 6.5 Compatibility
+* Other minor changes
 
 = 1.7.1 - 2023-11-08 =
 * Added fonts preview to the admin panel settings of the plugin
