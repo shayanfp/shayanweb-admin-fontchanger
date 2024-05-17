@@ -4,7 +4,7 @@ Plugin Name: ShayanWeb Admin FontChanger | افزونه‌ی تغییر فونت
 Plugin URI:  https://ShayanWeb.com/blog/change-wp-admin-font/
 Author:      ShayanWeb
 Author URI:  https://ShayanWeb.com/
-Version: 	 1.7.2
+Version: 	 1.8
 Tags: fonts, admin, wp-admin
 Requires at least: 5.2
 Tested up to: 6.5
@@ -12,14 +12,14 @@ Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: shayanweb-admin-fontchanger
-Description: Easiest way to change WordPress admin font for farsi websites is using this plugin!
+Description: The easiest way to change the WordPress admin font for Farsi websites is by using this lightweight plugin!
 */
 //
 if (!defined('ABSPATH')){
 	exit; // Exit if accessed directly.
 }
 //
-define( 'SHAYANWEB_FONT_CHANGER_VERSION' , '1.7.2' );
+define( 'SHAYANWEB_FONT_CHANGER_VERSION' , '1.8' );
 define( 'SHAYANWEB_FONT_CHANGER_URL' , trailingslashit(plugin_dir_url( __FILE__ )) );
 define( 'SHAYANWEB_FONT_CHANGER_DIR' , trailingslashit(plugin_dir_path(__FILE__)) );
 define( 'SHAYANWEB_FONT_CHANGER_INC_DIR' , trailingslashit(SHAYANWEB_FONT_CHANGER_DIR.'inc' ));

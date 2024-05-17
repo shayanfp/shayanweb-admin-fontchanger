@@ -5,7 +5,7 @@ if (!defined('ABSPATH')){
 //
 function shayanweb_fontchanger_get_all_options(){
   $options = array(
-    // types: onoff/txt/select
+    // types: onoff/txt/select/code
     'choose_font' => array(
       'name' => __('انتخاب فونت پیشخوان وردپرس', 'shayanweb-admin-fontchanger'),
       'description' => __('فونت فارسی مدنظر خود را انتخاب کنید تا در بخش مدیریتی سایت اعمال شود. (پس از ذخیره کردن، یکبار رفرش کنید تا اعمال شود.)', 'shayanweb-admin-fontchanger'),
@@ -15,7 +15,17 @@ function shayanweb_fontchanger_get_all_options(){
         'shabnam'=>__('شبنم', 'shayanweb-admin-fontchanger'),
         'vazir'=>__('وزیرمتن', 'shayanweb-admin-fontchanger'),
         'sahel'=>__('ساحل', 'shayanweb-admin-fontchanger'),
+        'custom'=>__('جدید: فونت دلخواه (نیاز به انجام تنظیمات زیر)', 'shayanweb-admin-fontchanger')
       ),
+    ),
+    'custom_font_css' => array(
+      'name' => __('کد CSS فونت دلخواه', 'shayanweb-admin-fontchanger'),
+      'description' => __('<strong>توضیحات مهم: </strong>برای دریافت CSS مخصوص فونت دلخواه خودتان،
+      ابتدا از بخش <a target="_blank" href="'.get_admin_url(null,'upload.php').'">«رسانه‌ها»</a> فایل‌های فونت خود را آپلود کنید، لینک آن‌ها را کپی کنید
+      و با کمک <a style="display:inline-block;padding:5px 10px;color:#fff;background:#304FFE;border-radius:5px" href="https://shayanweb.com/font-css-generator" target="_blank">ابزار رایگان شایان وب: ساخت CSS برای فونت</a>، کد CSS را بسازید و در اینجا کد CSS ساخته شده را paste کنید. توجه: font-family (نام فونت) باید ShayanWeb-Font باشد.<br>
+      ما این ابزار و این امکان را مخصوص این افزونه و با درخواست کاربران عزیز این افزونه برنامه‌نویسی کردیم. پیاده‌سازی امکان تنظیم فونت اختصاصی، پروژه‌ای بود که بسیار پرچالش و طولانی بود و کاملاً رایگان بصورت یک آپدیت افزونه به شما ارائه شد.', 'shayanweb-admin-fontchanger'),
+      'type' => 'code',
+      'default' => '',
     ),
     'wp_font_changer' => array(
       'name' => __('فعال بودن تغییر فونت پیشخوان وردپرس', 'shayanweb-admin-fontchanger'),
@@ -69,7 +79,11 @@ function shayanweb_fontchanger_update_option($array){
   // update or put each $array items in the saved option
   foreach ($array as $name => $value) {
     if(array_key_exists($name,$options)){
-      $current_option[$name]=$value;
+      if($name=='custom_font_css'){
+        $current_option[$name]=wp_unslash($value); // css saving
+      }else{ // for all
+        $current_option[$name]=$value;
+      }
     }
   }
   //
@@ -215,6 +229,10 @@ function shayanweb_fontchangeroptions_pagecontent() {
 	.shayanweb-option label{display:block;margin-bottom:8px;font-size:15px;font-weight:bold;}
 	.shayanweb-option input[type="text"]{display:block;width:100%}
 	.shayanweb-option select{display:block;width:100%}
+
+  .shayanweb-option .shayanweb-code-input{
+    display:block;width:100%;direction:ltr
+  }
 	</style>
   <div class="wrap shayanweb_fontchanger-settings">
     <div class="shayanweb-boxed">
@@ -247,7 +265,11 @@ function shayanweb_fontchangeroptions_pagecontent() {
         $default = $option['default'];
         $description = $option['description'];
         $current = shayanweb_fontchanger_option($name);
-        echo '<div class="shayanweb-option">'.
+        $boxclass='';
+        if($name=='custom_font_css'){
+          $boxclass = ' custom_font_css';
+        }
+        echo '<div class="shayanweb-option'.$boxclass.'">'.
         '<label for="'.$name.'">'.$fname.'</label>'.
         '<p>'.$description.'</p>';
         if($type == 'select'){
@@ -273,6 +295,7 @@ function shayanweb_fontchangeroptions_pagecontent() {
                 shabnam: "'.plugins_url( 'img/shabnam.jpg', dirname(__FILE__) ).'",
                 vazir: "'.plugins_url( 'img/vazirmatn.jpg', dirname(__FILE__) ).'",
                 sahel: "'.plugins_url( 'img/sahel.jpg', dirname(__FILE__) ).'",
+                custom: "'.plugins_url( 'img/custom.jpg', dirname(__FILE__) ).'",
               };
               const select = document.getElementById("choose_font");
               const fontPreview = document.getElementById("font_preview");
@@ -281,16 +304,40 @@ function shayanweb_fontchangeroptions_pagecontent() {
                 fontPreview.src = fontPreviews[selectedFont];
               });
               fontPreview.src = fontPreviews[select.value];
+
+              //
+              //
             </script>
             </div>';
           }
+        }elseif($type == 'code'){
+          echo '<textarea rows="10"/ class="shayanweb-code-input" name="'.$name.'" id="'.$name.'" placeholder="کد را اینجا وارد کنید">'.$current.'</textarea>';
+          echo '<script>
+          const theselect = document.getElementById("choose_font");
+          const customFontDiv = document.querySelector(".custom_font_css");
+
+          theselect.addEventListener("change", function () {
+            if (theselect.value === "custom") {
+              customFontDiv.style.display = "block";
+            } else {
+              customFontDiv.style.display = "none";
+            }
+          });
+
+          // Initial check for theselect value on page load
+          if (theselect.value === "custom") {
+            customFontDiv.style.display = "block";
+          } else {
+            customFontDiv.style.display = "none";
+          }
+        </script>';
         }elseif($type == 'onoff'){
           $checked='';
           if($current=='on'){
             $checked=' checked';
           }
           echo
-          '<label class="shayanweb-switch">
+          '<label for="'.$name.'" class="shayanweb-switch">
             <input name="'.$name.'" id="'.$name.'" value="on" type="checkbox"'.$checked.'>
             <span class="slider round"></span>
           </label>';
@@ -326,8 +373,6 @@ function shayanweb_fontchangeroptions_pagecontent() {
         _e('بریم به شایان وب!😍', 'shayanweb-admin-fontchanger');
         ?></a>
       </div>
-
-
 
     </div>
   </div>
