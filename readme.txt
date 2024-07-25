@@ -2,8 +2,8 @@
 Contributors: shayanfp
 Tags: fonts, admin, wp-admin
 Requires at least: 5.2
-Tested up to: 6.5
-Stable tag: 1.8
+Tested up to: 6.6.1
+Stable tag: 1.8.1
 Requires PHP: 5.6
 Donate link: https://ShayanWeb.com/
 License: GPLv2 or later
@@ -57,6 +57,9 @@ We highly recommend using your WordPress theme settings to do that. But if your 
 2. Plugin settings interface
 
 == Changelog ==
+
+= 1.8.1 - 2024-07-25 =
+* WordPress 6.6 Compatibility Check
 
 = 1.8 - 2024-05-18 =
 * Big Update: Uploading your custom font and using it on the WordPress admin and Front-End!!! (Many Requested)
