@@ -82,7 +82,7 @@ function shayanweb_fontchanger_update_option($array){
       if($name=='custom_font_css'){
         $current_option[$name]=wp_unslash($value); // css saving
       }else{ // for all
-        $current_option[$name]=$value;
+        $current_option[$name]=sanitize_text_field($value);
       }
     }
   }
@@ -238,7 +238,7 @@ function shayanweb_fontchangeroptions_pagecontent() {
     <div class="shayanweb-boxed">
       <h1><?php _e( 'تنظیمات افزونه‌ی تغییر فونت <a href="https://shayanweb.com" style="color:#00BFA5" target="_blank">شایان وب</a>', 'shayanweb-admin-fontchanger' ) ?></h1>
       <?php
-      if(!empty($_POST['save_settings'])){
+      if (!empty($_POST['save_settings']) && check_admin_referer('shayanweb_fontchanger_save_settings', 'shayanweb_fontchanger_nonce')) {
         $new_options = $_POST;
         unset($new_options['save_settings']);
         //
@@ -256,6 +256,7 @@ function shayanweb_fontchangeroptions_pagecontent() {
 
       $options = shayanweb_fontchanger_get_all_options();
       echo '<form id="shayanweb_fontchanger_options" method="post" action="">';
+      wp_nonce_field('shayanweb_fontchanger_save_settings', 'shayanweb_fontchanger_nonce');
 			echo '<h2>'.__( 'تنظیمات تغییر فونت شایان وب', 'shayanweb-admin-fontchanger' ).'</h2>';
 			echo '<p>'.__( 'گزینه‌های زیر را تنظیم کنید تا فونت فارسی در پیشخوان وردپرس وبسایت شما قرار گیرد. (بطور پیش‌فرض فعال است)', 'shayanweb-admin-fontchanger' ).'</p>';
       foreach ($options as $opton_name => $option) {

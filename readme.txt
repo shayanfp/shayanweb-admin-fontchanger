@@ -2,8 +2,8 @@
 Contributors: shayanfp
 Tags: fonts, admin, wp-admin
 Requires at least: 5.2
-Tested up to: 6.6.1
-Stable tag: 1.8.1
+Tested up to: 6.8.1
+Stable tag: 1.9
 Requires PHP: 5.6
 Donate link: https://ShayanWeb.com/
 License: GPLv2 or later
@@ -57,6 +57,11 @@ We highly recommend using your WordPress theme settings to do that. But if your 
 2. Plugin settings interface
 
 == Changelog ==
+
+= 1.9 - 2025-05-28 =
+* Security: Improved sanitization of admin input using `sanitize_text_field()` for better security
+* Minor improvements in saving and handling custom font settings
+* WordPress 6.8 Compatibility Check
 
 = 1.8.1 - 2024-07-25 =
 * WordPress 6.6 Compatibility Check
