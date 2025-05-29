@@ -16,3 +16,4 @@ font-family:dashicons!important}
 .tgmpa .tablenav>p>strong>small {display:none!important}
 #adminmenu #menu-posts-elementor_library .wp-menu-image:before, #adminmenu #toplevel_page_elementor div.wp-menu-image:before {
 font-family:eicons!important}
+.CodeMirror pre,.CodeMirror pre *{font-family:monospace!important;white-space: pre;}

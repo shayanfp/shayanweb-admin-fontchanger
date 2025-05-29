@@ -3,7 +3,7 @@ Contributors: shayanfp
 Tags: fonts, admin, wp-admin
 Requires at least: 5.2
 Tested up to: 6.8.1
-Stable tag: 1.9
+Stable tag: 1.9.1
 Requires PHP: 5.6
 Donate link: https://ShayanWeb.com/
 License: GPLv2 or later
@@ -58,7 +58,11 @@ We highly recommend using your WordPress theme settings to do that. But if your 
 
 == Changelog ==
 
+= 1.9.1 - 2025-05-29 =
+* Improved compatibility with WordPress code editors (plugins/themes editor) by preserving default monospace font (CodeMirror) for better readability
+
 = 1.9 - 2025-05-28 =
+* Security: Added nonce verification to prevent unauthorized requests
 * Security: Improved sanitization of admin input using `sanitize_text_field()` for better security
 * Minor improvements in saving and handling custom font settings
 * WordPress 6.8 Compatibility Check
