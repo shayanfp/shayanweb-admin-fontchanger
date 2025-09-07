@@ -80,9 +80,9 @@ function shayanweb_fontchanger_update_option($array){
   foreach ($array as $name => $value) {
     if(array_key_exists($name,$options)){
       if($name=='custom_font_css'){
-        $current_option[$name]=wp_unslash($value); // css saving
+        $current_option[$name] = wp_strip_all_tags(wp_unslash($value)); // css saving
       }else{ // for all
-        $current_option[$name]=sanitize_text_field($value);
+        $current_option[$name] = sanitize_text_field($value);
       }
     }
   }
@@ -312,7 +312,7 @@ function shayanweb_fontchangeroptions_pagecontent() {
             </div>';
           }
         }elseif($type == 'code'){
-          echo '<textarea rows="10"/ class="shayanweb-code-input" name="'.$name.'" id="'.$name.'" placeholder="کد را اینجا وارد کنید">'.$current.'</textarea>';
+          echo '<textarea rows="10"/ class="shayanweb-code-input" name="'.$name.'" id="'.$name.'" placeholder="کد را اینجا وارد کنید">'.esc_textarea($current).'</textarea>';
           echo '<script>
           const theselect = document.getElementById("choose_font");
           const customFontDiv = document.querySelector(".custom_font_css");
@@ -385,12 +385,21 @@ function shayanweb_fontchanger_enqueue_saving_admin_script() {
   if (isset($_GET['page']) && $_GET['page'] === 'shayanweb-fontchanger-options') {
       wp_enqueue_script('jquery');
       wp_enqueue_script('shayanweb-fontchanger-ajax-save', SHAYANWEB_FONT_CHANGER_URL . 'js/shayanweb-admin-saving.js', array('jquery'), SHAYANWEB_FONT_CHANGER_VERSION, true);
+
+      // Pass nonce to javascript
+      wp_localize_script('shayanweb-fontchanger-ajax-save', 'shayanweb_ajax_object', array(
+          'nonce' => wp_create_nonce('shayanweb_fontchanger_ajax_nonce')
+      ));
   }
 }
 add_action('admin_enqueue_scripts', 'shayanweb_fontchanger_enqueue_saving_admin_script');
 
 
 function shayanweb_fontchanger_ajax_options_save() {
+  if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'shayanweb_fontchanger_ajax_nonce')) {
+      wp_send_json_error('Nonce verification failed.');
+  }
+
   if (!current_user_can('manage_options')) {
       wp_send_json_error('شما دسترسی ندارید.');
   }
@@ -398,14 +407,14 @@ function shayanweb_fontchanger_ajax_options_save() {
   if (!empty($_POST['action'])) {
       $new_options = $_POST;
       unset($new_options['action']);
-      
+      unset($new_options['nonce']); // Unset nonce before saving
+
       $real_options = shayanweb_fontchanger_get_all_options();
       foreach ($real_options as $r_name => $r_data) {
           if (!array_key_exists($r_name, $new_options) && $r_data['type'] == 'onoff') {
               $new_options[$r_name] = 'off';
           }
       }
-      
       shayanweb_fontchanger_update_option($new_options);
       wp_send_json_success();
   } else {

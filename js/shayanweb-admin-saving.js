@@ -6,19 +6,23 @@ jQuery(document).ready(function($) {
 
         var formData = $('#shayanweb_fontchanger_options').serialize();
 
+        var dataToSend = formData + 
+        '&action=shayanweb_fontchanger_ajax_options_save' + '&nonce=' + shayanweb_ajax_object.nonce;
+
         $.ajax({
             type: 'POST',
             url: ajaxurl,
-            data: formData + '&action=shayanweb_fontchanger_ajax_options_save', // Updated action name
+            data: dataToSend,
             success: function(response) {
                 if (response.success) {
                     $('#message-container').removeClass('sherror shwait').addClass('shsuccess').text(shweb_success_message);
                 } else {
-                    $('#message-container').removeClass('shsuccess shwait').addClass('sherror').text(shweb_error_message);
+                    var errorMessage = response.data ? response.data : shweb_error_message;
+                    $('#message-container').removeClass('shsuccess shwait').addClass('sherror').text(errorMessage);
                 }
             },
             error: function() {
-                $('#message-container').removeClass('shsuccess shwait').addClass('sherror').text(shweb_error_message);
+                $('#message-container').removeClass('shsuccess shwait').addClass('sherror').text(shweb_not_connected_message);
             }
         });
     });
