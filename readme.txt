@@ -2,8 +2,8 @@
 Contributors: shayanfp
 Tags: fonts, admin, wp-admin
 Requires at least: 5.2
-Tested up to: 6.8.2
-Stable tag: 1.10
+Tested up to: 7.0
+Stable tag: 1.11
 Requires PHP: 5.6
 Donate link: https://ShayanWeb.com/
 License: GPLv2 or later
@@ -60,6 +60,13 @@ We highly recommend using your WordPress theme settings to do that. But if your 
 2. Plugin settings interface
 
 == Changelog ==
+
+= 1.11 - 2026-05-26 =
+* Performance Improvement: Refactored database option calls to use static caching, reducing server load and improving site speed.
+* Font Loading Optimization: Removed legacy font formats (EOT, TTF, WOFF) and switched exclusively to the modern, highly compressed WOFF2 format. This drastically reduces the plugin size and improves page load times.
+* Translation: Properly hooked `load_plugin_textdomain` to ensure translation files load correctly.
+* Code Refactoring: Initialized core plugin logic inside the `plugins_loaded` hook to prevent third-party conflicts.
+* WordPress 7.0 Compatibility Check.
 
 = 1.10 - 2025-07-09 =
 * Security Enhancement: Strengthened security by adding nonce verification to admin AJAX requests and improving sanitization across all inputs and outputs.

@@ -100,12 +100,28 @@ function shayanweb_fontchanger_update_option($array){
 }
 
 function shayanweb_fontchanger_option($option_name){
-  shayanweb_fontchanger_update_option(array()); //add default items if not
-  $options = shayanweb_fontchanger_get_all_options();
-	if(!empty($option_name) and array_key_exists($option_name,$options)){
-    $get_options = get_option('shayanweb_fontchanger_options');
-    return $get_options[$option_name];
-	}
+  static $saved_options = null;
+  static $all_options_structure = null;
+
+  if ($saved_options === null) {
+      $saved_options = get_option('shayanweb_fontchanger_options', array());
+      if (!is_array($saved_options)) {
+          $saved_options = array();
+      }
+  }
+
+  if ($all_options_structure === null) {
+      $all_options_structure = shayanweb_fontchanger_get_all_options();
+  }
+
+  if(!empty($option_name) && array_key_exists($option_name, $all_options_structure)){
+    if(array_key_exists($option_name, $saved_options)) {
+        return $saved_options[$option_name];
+    } else {
+        return $all_options_structure[$option_name]['default'];
+    }
+  }
+  
   return false;
 }
 
