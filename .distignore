@@ -5,3 +5,4 @@
 .wordpress-org
 .distignore
 README.md
+*.py

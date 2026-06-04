@@ -5,12 +5,15 @@
         "php": "latest",
         "wp": "latest"
     },
+    "features": {
+        "networking": true
+    },
     "plugins": [
-		{
-			"resource": "wordpress.org/plugins",
-			"slug": "shayanweb-admin-fontchanger"
-		}
-	],
+        {
+            "resource": "wordpress.org/plugins",
+            "slug": "shayanweb-admin-fontchanger"
+        }
+    ],
     "steps": [
         {
             "step": "wp-cli",

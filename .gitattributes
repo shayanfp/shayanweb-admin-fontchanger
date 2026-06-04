@@ -3,3 +3,4 @@
 .gitattributes export-ignore
 .distignore export-ignore
 .gitignore export-ignore
+*.py export-ignore

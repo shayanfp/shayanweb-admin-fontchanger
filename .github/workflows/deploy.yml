@@ -1,9 +1,5 @@
 name: Deploy to WordPress.org
-
 on:
-  push:
-    branches:
-      - main
   release:
     types: [published]
 
@@ -15,7 +11,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Build and Deploy
+    - name: WordPress Plugin Deploy
       uses: 10up/action-wordpress-plugin-deploy@stable
       with:
         generate-zip: true
