@@ -1,22 +1,20 @@
 {
+    "$schema": "https://playground.wordpress.net/blueprint-schema.json",
     "landingPage": "/wp-admin/admin.php?page=shayanweb-fontchanger-options",
     "preferredVersions": {
-        "php": "8.0",
+        "php": "latest",
         "wp": "latest"
     },
-    "phpExtensionBundles": [
-        "kitchen-sink"
-    ],
+    "plugins": [
+		{
+			"resource": "wordpress.org/plugins",
+			"slug": "shayanweb-admin-fontchanger"
+		}
+	],
     "steps": [
         {
-            "step": "installPlugin",
-            "pluginZipFile": {
-                "resource": "wordpress.org/plugins",
-                "slug": "shayanweb-admin-fontchanger"
-            },
-            "options": {
-                "activate": true
-            }
+            "step": "wp-cli",
+            "command": "wp language core install fa_IR --activate"
         },
         {
             "step": "login",
