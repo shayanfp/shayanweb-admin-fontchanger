@@ -1,29 +1,22 @@
 {
     "landingPage": "/wp-admin/admin.php?page=shayanweb-fontchanger-options",
     "preferredVersions": {
-        "php": "8.3",
+        "php": "8.0",
         "wp": "latest"
     },
     "phpExtensionBundles": [
         "kitchen-sink"
     ],
-    "features": {
-        "networking": true
-    },
     "steps": [
         {
             "step": "installPlugin",
-            "pluginData": {
+            "pluginZipFile": {
                 "resource": "wordpress.org/plugins",
                 "slug": "shayanweb-admin-fontchanger"
             },
             "options": {
                 "activate": true
             }
-        },
-        {
-            "step": "wp-cli",
-            "command": "wp language core install fa_IR --activate"
         },
         {
             "step": "login",
